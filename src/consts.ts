@@ -31,5 +31,5 @@ export const DefaultLocale = "en";
 
 export const colors = {
   primary: "#FF8C00",
-  bgContainer: "#fefefe",
+  bgPrimary: "#fefefe",
 };
