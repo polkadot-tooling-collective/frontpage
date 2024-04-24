@@ -23,3 +23,12 @@ export const TipsThresholdMedium = 1200
  * locale
  */
 export const DefaultLocale = "en"
+
+/*
+ * Colors
+ */
+
+export const colors = {
+    primary: "#FF8C00",
+    bgContainer: "#fefefe",
+}
