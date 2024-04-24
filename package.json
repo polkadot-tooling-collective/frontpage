@@ -19,9 +19,6 @@
     "lint:fix": "eslint . --ext ts,tsx --fix && prettier --write .",
     "preview": "vite preview"
   },
-  "engines": {
-    "pnpm": "9"
-  },
   "dependencies": {
     "@mdx-js/react": "^3.0.1",
     "@mdx-js/rollup": "^3.0.1",
