@@ -24,7 +24,7 @@
   --card-shadow-color: rgb(158 158 158 / 20%);
   --card-deep-shadow-color: rgb(28 24 28 / 25%);
   --card-shadow-color-secondary: #000;
-  --accent-color-primary: #e6007a;
+  --accent-color-primary: #ff8c00;
   --accent-color-secondary: #552bbf;
   --accent-color-tertiary: var(--accent-color-tertiary-light);
   --accent-color-stroke: var(--accent-color-stroke-light);
@@ -78,7 +78,7 @@
 /* dark theme colors */
 .theme-dark {
   --background-default: rgb(36 32 36);
-  --background-primary: #000d18;
+  --background-primary: #000000;
   --background-invert: #ddd;
   --background-list-item: rgb(38 33 38 / 100%);
   --background-modal-card: rgb(32 26 32 / 50%);
@@ -100,7 +100,7 @@
   --button-hover-background: rgb(66 61 68);
   --card-shadow-color: rgb(28 24 28 / 25%);
   --card-deep-shadow-color: rgb(28 24 28 / 50%);
-  --card-shadow-color-secondary: #f8f7f7 --accent-color-primary: #e6007a;
+  --card-shadow-color-secondary: #f8f7f7 --accent-color-primary: #ff8c00;
   --accent-color-secondary: #552bbf;
   --accent-color-tertiary: var(--accent-color-tertiary-dark);
   --accent-color-stroke: var(--accent-color-stroke-dark);
