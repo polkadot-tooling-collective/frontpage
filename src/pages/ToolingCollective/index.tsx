@@ -1,4 +1,4 @@
-import MdxCode from "./index.mdx"
+import MdxCode from "./index.mdx";
 
 export const ToolingCollective = () => {
   return (
@@ -10,5 +10,5 @@ export const ToolingCollective = () => {
         <MdxCode />
       </div>
     </>
-  )
-}
+  );
+};

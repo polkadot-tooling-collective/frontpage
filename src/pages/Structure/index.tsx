@@ -1,4 +1,4 @@
-import MdxCode from "./index.mdx"
+import MdxCode from "./index.mdx";
 
 export const Structure = () => {
   return (
@@ -10,5 +10,5 @@ export const Structure = () => {
         <MdxCode />
       </div>
     </>
-  )
-}
+  );
+};

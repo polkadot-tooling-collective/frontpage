@@ -24,7 +24,7 @@
   --card-shadow-color: rgb(158 158 158 / 20%);
   --card-deep-shadow-color: rgb(28 24 28 / 25%);
   --card-shadow-color-secondary: #000;
-  --accent-color-primary: #FF8C00;
+  --accent-color-primary: #ff8c00;
   --accent-color-secondary: #552bbf;
   --accent-color-tertiary: var(--accent-color-tertiary-light);
   --accent-color-stroke: var(--accent-color-stroke-light);
@@ -44,18 +44,24 @@
   --text-color-secondary: #555;
   --text-color-tertiary: #888;
   --text-color-invert: #fafafa;
-  --gradient-background: linear-gradient(180deg,
-      #efeeee 0%,
-      #efeeee 100px,
-      #e6e6e6 80%,
-      #fbede8 100%);
-  --gradient-side-menu: linear-gradient(180deg,
-      rgb(244 242 242 / 93%) 0%,
-      rgb(228 225 225 / 93%) 100%);
+  --gradient-background: linear-gradient(
+    180deg,
+    #efeeee 0%,
+    #efeeee 100px,
+    #e6e6e6 80%,
+    #fbede8 100%
+  );
+  --gradient-side-menu: linear-gradient(
+    180deg,
+    rgb(244 242 242 / 93%) 0%,
+    rgb(228 225 225 / 93%) 100%
+  );
   --highlight-primary: rgb(224 222 222 / 75%);
-  --highlight-secondary: linear-gradient(90deg,
-      rgb(0 0 0 / 4%) 0%,
-      rgb(0 0 0 / 1%) 100%);
+  --highlight-secondary: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 4%) 0%,
+    rgb(0 0 0 / 1%) 100%
+  );
   --grid-color-primary: #e3e3e3;
   --grid-color-secondary: #e8e8e8;
   --card-shadow: -1px -2px 12px 1px var(--card-shadow-color-secondary),
@@ -94,7 +100,7 @@
   --button-hover-background: rgb(66 61 68);
   --card-shadow-color: rgb(28 24 28 / 25%);
   --card-deep-shadow-color: rgb(28 24 28 / 50%);
-  --card-shadow-color-secondary: #f8f7f7 --accent-color-primary: #FF8C00;
+  --card-shadow-color-secondary: #f8f7f7 --accent-color-primary: #ff8c00;
   --accent-color-secondary: #552bbf;
   --accent-color-tertiary: var(--accent-color-tertiary-dark);
   --accent-color-stroke: var(--accent-color-stroke-dark);
@@ -114,17 +120,23 @@
   --text-color-secondary: #938e94;
   --text-color-tertiary: #817d82;
   --text-color-invert: #0f0e0f;
-  --gradient-background: linear-gradient(180deg,
-      rgb(36 32 36) 0%,
-      rgb(36 32 36) 100px,
-      rgb(32 28 32) 100%);
-  --gradient-side-menu: linear-gradient(180deg,
-      rgb(48 41 48) 0%,
-      rgb(30 27 30) 100%);
+  --gradient-background: linear-gradient(
+    180deg,
+    rgb(36 32 36) 0%,
+    rgb(36 32 36) 100px,
+    rgb(32 28 32) 100%
+  );
+  --gradient-side-menu: linear-gradient(
+    180deg,
+    rgb(48 41 48) 0%,
+    rgb(30 27 30) 100%
+  );
   --highlight-primary: rgb(255 255 255 / 8%);
-  --highlight-secondary: linear-gradient(90deg,
-      rgb(255 255 255 / 3%) 0%,
-      rgb(255 255 255 / 1%) 100%);
+  --highlight-secondary: linear-gradient(
+    90deg,
+    rgb(255 255 255 / 3%) 0%,
+    rgb(255 255 255 / 1%) 100%
+  );
   --grid-color-primary: rgb(51 43 51);
   --grid-color-secondary: rgb(53 45 53);
   --card-shadow: -1px -2px 12px 1px var(--card-shadow-color-secondary),

@@ -1,29 +1,25 @@
-import { ConfigProvider, Divider, Layout, Menu, Modal } from "antd"
-import type { GetProp, MenuProps } from "antd"
-import { HiGlobeAlt, HiMiniInboxStack, HiMiniUserGroup, HiMiniUserPlus } from "react-icons/hi2"
+import { ConfigProvider, Divider, Layout, Menu, Modal } from "antd";
+import type { GetProp, MenuProps } from "antd";
+import { HiGlobeAlt, HiMiniInboxStack } from "react-icons/hi2";
 
-import { PolkadotUrl, colors } from "consts"
-import { useLocalStorage } from "usehooks-ts"
+import { PolkadotUrl, colors } from "consts";
+import { useLocalStorage } from "usehooks-ts";
 
-import PolkadotIcon from "./img/polkadotIcon.svg?react"
-import { useTheme } from "./contexts/Themes"
-import {
-  IoSunnyOutline,
-  IoMoon,
-  IoLogoGithub,
-} from "react-icons/io5"
+import PolkadotIcon from "./img/polkadotIcon.svg?react";
+import { useTheme } from "./contexts/Themes";
+import { IoSunnyOutline, IoMoon, IoLogoGithub } from "react-icons/io5";
 import {
   BsArrowsCollapseVertical,
   BsArrowsExpandVertical,
-} from "react-icons/bs"
+} from "react-icons/bs";
 
-import { useEffect, useState } from "react"
-import { Link, Route, Routes, useLocation } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 
-import { ToolingCollective } from "pages/ToolingCollective"
-import { Structure } from "pages/Structure"
+import { ToolingCollective } from "pages/ToolingCollective";
+import { Structure } from "pages/Structure";
 
-type MenuItem = GetProp<MenuProps, "items">[number]
+type MenuItem = GetProp<MenuProps, "items">[number];
 
 const pages = [
   {
@@ -38,34 +34,34 @@ const pages = [
     path: "structure",
     element: <Structure />,
   },
-]
+];
 
-const iconSize = "1.25rem"
-const { Content, Footer, Sider } = Layout
+const iconSize = "1.25rem";
+const { Content, Footer, Sider } = Layout;
 
 const getItem = (
   label: React.ReactNode,
   key?: React.Key | null,
   icon?: React.ReactNode,
-  children?: MenuItem[]
+  children?: MenuItem[],
 ): MenuItem => {
   return {
     key,
     icon,
     children,
     label,
-  } as MenuItem
-}
+  } as MenuItem;
+};
 
 const getLink = (
   label: string,
   link: string = "#",
-  target: "_parent" | "_blank" = "_parent"
+  target: "_parent" | "_blank" = "_parent",
 ): React.ReactNode => (
   <Link to={link} target={target}>
     {label}
   </Link>
-)
+);
 
 const mainItems: MenuItem[] = [
   getItem(getLink("Collective", "collective"), "collective", <HiGlobeAlt />),
@@ -89,7 +85,7 @@ const mainItems: MenuItem[] = [
   //   getItem(getLink("Modules", "modules"), "modules", <HiMiniInboxStack />),
   // ]),
   // getItem(getLink("Open RFCs", "rfcs"), "rfcs", <MdDocumentScanner />),
-]
+];
 
 // const secondaryItems: MenuItem[] = [
 //   getItem("Element", "sub1", <SiElement />, [
@@ -131,56 +127,62 @@ const mainItems: MenuItem[] = [
 //   ),
 // ]
 
-const type = "vertical"
+const type = "vertical";
 
 export const RouterInner = () => {
-  const location = useLocation()
-  const [collapsed, setCollapsed] = useState<boolean>(false)
-  const [token, setToken] = useState({})
-  const { mode, toggleTheme } = useTheme()
+  const location = useLocation();
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const [token, setToken] = useState({});
+  const { mode, toggleTheme } = useTheme();
 
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
   const [settings, setSettings] = useLocalStorage("fellowship-settings", {
     themeMode: "light",
     collapsed,
-  })
+  });
 
   useEffect(() => {
-    setCollapsed(settings.collapsed)
-  }, [settings.collapsed])
+    setCollapsed(settings.collapsed);
+  }, [settings.collapsed]);
 
-  const size = collapsed ? "1.8rem" : "2.2rem"
-  const autoWidth = collapsed ? "4rem" : "12rem"
+  const size = collapsed ? "1.8rem" : "2.2rem";
+  const autoWidth = collapsed ? "4rem" : "12rem";
 
-  const Svg = <>
-    <PolkadotIcon
-      style={{
-        maxHeight: "100%",
-        width: "2rem",
-        fill: colors.primary,
-      }}
-      width={size}
-      height={size}
-    />
-    {!collapsed ?
-      <div style={{
-        display: "flex",
-        paddingLeft: "1rem",
-        fontFamily: "Unbounded",
-        fontSize: "1.5rem",
-        fontWeight: "bold",
-        color: colors.primary
-      }}>Tooling</div> : null
-    }
-  </>
+  const Svg = (
+    <>
+      <PolkadotIcon
+        style={{
+          maxHeight: "100%",
+          width: "2rem",
+          fill: colors.primary,
+        }}
+        width={size}
+        height={size}
+      />
+      {!collapsed ? (
+        <div
+          style={{
+            display: "flex",
+            paddingLeft: "1rem",
+            fontFamily: "Unbounded",
+            fontSize: "1.5rem",
+            fontWeight: "bold",
+            color: colors.primary,
+          }}
+        >
+          Tooling
+        </div>
+      ) : null}
+    </>
+  );
 
   useEffect(() => {
     setToken({
       components: {
         Menu: {
           Layout: {
-            bodyBg: "blue"
+            bodyBg: "blue",
           },
           colorPrimary: colors.primary,
           colorBgContainer: "var(--background-primary)",
@@ -188,8 +190,8 @@ export const RouterInner = () => {
           /* here is your component tokens */
         },
       },
-    })
-  }, [mode])
+    });
+  }, [mode]);
 
   return (
     <ConfigProvider theme={token}>
@@ -209,7 +211,7 @@ export const RouterInner = () => {
           collapsedWidth="4rem"
           collapsed={collapsed}
           onBreakpoint={(val) => {
-            setCollapsed(val)
+            setCollapsed(val);
           }}
         >
           <div
@@ -221,7 +223,10 @@ export const RouterInner = () => {
               justifyContent: "center",
             }}
           >
-            <Link style={{ height: "4rem", display: "flex", alignItems: "center" }} to={PolkadotUrl}>
+            <Link
+              style={{ height: "4rem", display: "flex", alignItems: "center" }}
+              to={PolkadotUrl}
+            >
               {Svg}
             </Link>
           </div>
@@ -270,10 +275,13 @@ export const RouterInner = () => {
                 style={{ color: colors.primary }}
                 type="button"
                 onClick={() => {
-                  toggleTheme()
+                  toggleTheme();
                 }}
               >
-                <IoSunnyOutline size={iconSize} style={{ color: colors.primary }} />
+                <IoSunnyOutline
+                  size={iconSize}
+                  style={{ color: colors.primary }}
+                />
               </button>
             ) : (
               <button type="button" onClick={() => toggleTheme()}>
@@ -284,11 +292,11 @@ export const RouterInner = () => {
               style={{ color: colors.primary }}
               type="button"
               onClick={() => {
-                console.log(settings)
+                console.log(settings);
                 setSettings({
                   themeMode: settings.themeMode,
                   collapsed: !collapsed,
-                })
+                });
               }}
             >
               {collapsed ? (
@@ -301,7 +309,10 @@ export const RouterInner = () => {
               style={{ color: colors.primary }}
               type="button"
               onClick={() =>
-                window.open("https://github.com/polkadot-tooling-collective", "_blank")
+                window.open(
+                  "https://github.com/polkadot-tooling-collective",
+                  "_blank",
+                )
               }
             >
               <IoLogoGithub size={iconSize} />
@@ -322,7 +333,9 @@ export const RouterInner = () => {
           >
             <Routes>
               {pages.map(({ path, element }, i) => {
-                return <Route key={`page_${i}`} path={path} element={element} />
+                return (
+                  <Route key={`page_${i}`} path={path} element={element} />
+                );
               })}
             </Routes>
           </Content>
@@ -337,14 +350,14 @@ export const RouterInner = () => {
               {getLink(
                 "Governance v2",
                 "https://medium.com/polkadot-network/gov2-polkadots-next-generation-of-decentralised-governance-4d9ef657d11b",
-                "_blank"
+                "_blank",
               )}
             </p>
             <p>
               {getLink(
                 "Democracy Pallet",
                 "https://github.com/paritytech/polkadot-sdk/blob/master/substrate/frame/democracy/README.md",
-                "_blank"
+                "_blank",
               )}
             </p>
             <Divider />
@@ -353,14 +366,14 @@ export const RouterInner = () => {
               {getLink(
                 "Polkassembly",
                 "https://collectives.polkassembly.io/",
-                "_blank"
+                "_blank",
               )}
             </p>
             <p>
               {getLink(
                 "SubSquare",
                 "https://collectives.subsquare.io/fellowship",
-                "_blank"
+                "_blank",
               )}
             </p>
           </Modal>
@@ -384,5 +397,5 @@ export const RouterInner = () => {
         </Layout>
       </Layout>
     </ConfigProvider>
-  )
-}
+  );
+};

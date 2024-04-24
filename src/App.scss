@@ -15,7 +15,7 @@ html {
   h3,
   h4,
   h5 {
-    color: #FF8C00;
+    color: #ff8c00;
     font-family: "Unbounded";
     width: 100%;
     padding: 2rem 2rem 1rem;
@@ -23,7 +23,6 @@ html {
 
   // Overriding some theme styles
   .core-page-row {
-
     div,
     p {
       color: var(--text-color-primary);
@@ -43,7 +42,7 @@ html {
   .header {
     position: sticky;
     top: 0;
-    color: #FF8C00;
+    color: #ff8c00;
     background: var(--background-primary);
     padding: 1.3rem 0 1.5rem 1rem;
     opacity: 0.75;
@@ -100,7 +99,6 @@ html {
   }
 
   .ant-modal-content {
-
     h1,
     h2,
     h3,

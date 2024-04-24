@@ -1,10 +1,10 @@
-import react from "@vitejs/plugin-react-swc"
-import { defineConfig } from "vite"
-import checker from "vite-plugin-checker"
+import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
+import checker from "vite-plugin-checker";
 // import eslint from "vite-plugin-eslint"
-import svgr from "vite-plugin-svgr"
-import tsconfigPaths from "vite-tsconfig-paths"
-import mdx from "@mdx-js/rollup"
+import svgr from "vite-plugin-svgr";
+import tsconfigPaths from "vite-tsconfig-paths";
+import mdx from "@mdx-js/rollup";
 
 // https://vitejs.dev/config/
 //
@@ -35,4 +35,4 @@ export default defineConfig({
   optimizeDeps: {
     include: ["react/jsx-runtime"],
   },
-})
+});

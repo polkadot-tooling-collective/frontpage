@@ -1,4 +1,4 @@
-import { FaBugs } from "react-icons/fa6"
+import { FaBugs } from "react-icons/fa6";
 
 export const ErrorPage = () => {
   return (
@@ -18,5 +18,5 @@ export const ErrorPage = () => {
         .
       </p>
     </div>
-  )
-}
+  );
+};
