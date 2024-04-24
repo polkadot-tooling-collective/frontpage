@@ -301,7 +301,7 @@ export const RouterInner = () => {
               style={{ color: colors.primary }}
               type="button"
               onClick={() =>
-                window.open("https://github.com/polkadot-fellows", "_blank")
+                window.open("https://github.com/polkadot-tooling-collective", "_blank")
               }
             >
               <IoLogoGithub size={iconSize} />
