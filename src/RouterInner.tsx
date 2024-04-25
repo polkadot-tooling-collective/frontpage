@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { ConfigProvider, Divider, Layout, Menu, Modal } from "antd";
 import type { GetProp, MenuProps } from "antd";
 import { HiGlobeAlt, HiMiniInboxStack } from "react-icons/hi2";
@@ -73,66 +72,7 @@ const mainItems: MenuItem[] = [
   getItem(getLink("Collective", "collective"), "collective", <HiGlobeAlt />),
   getItem(getLink("Structure", "structure"), "structure", <HiMiniInboxStack />),
   getItem(getLink("Join Form", "join_form"), "join_form", <HiMiniInboxStack />),
-  // getItem("About", "sub0", <FaInfo />, [
-  //   getItem(
-  //     getLink("Membership", "membership"),
-  //     "membership",
-  //     <HiMiniUserPlus />
-  //   ),
-  //   getItem(
-  //     getLink("Governance", "governance"),
-  //     "governance",
-  //     <HiBuildingLibrary />
-  //   ),
-  //   getItem(
-  //     getLink("Interactions", "interactions"),
-  //     "interactions",
-  //     <HiMiniCubeTransparent />
-  //   ),
-  //   getItem(getLink("Modules", "modules"), "modules", <HiMiniInboxStack />),
-  // ]),
-  // getItem(getLink("Open RFCs", "rfcs"), "rfcs", <MdDocumentScanner />),
 ];
-
-// const secondaryItems: MenuItem[] = [
-//   getItem("Element", "sub1", <SiElement />, [
-//     getItem(
-//       getLink(
-//         "Members",
-//         "https://matrix.to/#/#fellowship-members:parity.io",
-//         "_blank"
-//       ),
-//       "sub1-1",
-//       <SiElement />
-//     ),
-//     getItem(
-//       getLink(
-//         "Open",
-//         "https://matrix.to/#/#fellowship-open-channel:parity.io",
-//         "_blank"
-//       ),
-//       "sub1-2",
-//       <IoChatbubblesOutline />
-//     ),
-//   ]),
-// ]
-//
-// const linksItems: MenuItem[] = [
-//   getItem(
-//     getLink("RFCs Book", "https://polkadot-fellows.github.io/RFCs/", "_blank"),
-//     "rfcs book",
-//     <IoDocumentText />
-//   ),
-//   getItem(
-//     getLink(
-//       "Manifesto",
-//       "https://github.com/polkadot-fellows/manifesto/blob/0c3df46d76625980b8b48742cb86f4d8fa6dda8d/manifesto.pdf",
-//       "_blank"
-//     ),
-//     "manifesto",
-//     <IoDocumentText />
-//   ),
-// ]
 
 const type = "vertical";
 
@@ -227,28 +167,6 @@ export const RouterInner = () => {
             items={mainItems}
           />
           <Divider />
-          {/* <Menu
-            selectedKeys={[location?.pathname.replace("/", "")]}
-            theme={mode}
-            mode={type}
-            items={secondaryItems}
-          />
-          <Divider />
-          <Menu
-            theme={mode}
-            mode={type}
-            items={[
-              ...linksItems,
-              getItem(
-                <a href="#" onClick={() => setOpenModal(true)}>
-                  Resources
-                </a>,
-                "resources",
-                <GrResources />
-              ),
-            ]}
-          />
-           */}
           <section
             style={{
               position: "absolute",
