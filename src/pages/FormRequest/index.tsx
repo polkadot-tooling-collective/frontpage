@@ -332,12 +332,10 @@ export const FormRequest = () => {
             style={{ margin: "2rem" }}
             type="primary"
             onClick={() => {
-              form.resetFields();
-              setFormat({});
               setIsForm(true);
             }}
           >
-            Empty and Return
+            Return to Form
           </Button>
         </>
       )}

@@ -52,6 +52,13 @@ export const lightTheme = {
       colorPrimary: colors.primary,
       colorPrimaryHover: colors.primaryHover,
     },
+    Typography: {
+      colorText: "#000",
+    },
+    Card: {
+      colorBgContainer: colors.bgPrimary,
+      colorTextHeading: colors.primary,
+    },
   },
 };
 
@@ -70,6 +77,13 @@ export const darkTheme = {
     Button: {
       colorPrimary: colors.primary,
       colorPrimaryHover: colors.primaryHover,
+    },
+    Typography: {
+      colorText: "#ccc",
+    },
+    Card: {
+      colorBgContainer: "#00152A",
+      colorTextHeading: colors.bgPrimary,
     },
   },
 };
