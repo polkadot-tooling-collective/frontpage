@@ -31,6 +31,9 @@ importers:
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
+      dayjs:
+        specifier: ^1.11.10
+        version: 1.11.10
       polkadot-api:
         specifier: ^0.4.0
         version: 0.4.0(@swc/core@1.4.11)(postcss@8.4.38)(rxjs@7.8.1)(smoldot@2.0.23)
@@ -55,6 +58,9 @@ importers:
       usehooks-ts:
         specifier: ^3.1.0
         version: 3.1.0(react@18.2.0)
+      yaml:
+        specifier: ^2.4.1
+        version: 2.4.1
     devDependencies:
       "@types/mdx":
         specifier: ^2.0.13

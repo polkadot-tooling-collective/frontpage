@@ -2,7 +2,7 @@ import { ConfigProvider, Divider, Layout, Menu, Modal } from "antd";
 import type { GetProp, MenuProps } from "antd";
 import { HiGlobeAlt, HiMiniInboxStack } from "react-icons/hi2";
 
-import { PolkadotUrl, colors } from "consts";
+import { PolkadotUrl, colors, darkTheme, lightTheme } from "consts";
 import { useLocalStorage } from "usehooks-ts";
 
 import PolkadotIcon from "./img/polkadotIcon.svg?react";
@@ -18,6 +18,7 @@ import { Link, Route, Routes, useLocation } from "react-router-dom";
 
 import { ToolingCollective } from "pages/ToolingCollective";
 import { Structure } from "pages/Structure";
+import { FormRequest } from "pages/FormRequest";
 
 type MenuItem = GetProp<MenuProps, "items">[number];
 
@@ -33,6 +34,10 @@ const pages = [
   {
     path: "structure",
     element: <Structure />,
+  },
+  {
+    path: "join_form",
+    element: <FormRequest />,
   },
 ];
 
@@ -66,73 +71,14 @@ const getLink = (
 const mainItems: MenuItem[] = [
   getItem(getLink("Collective", "collective"), "collective", <HiGlobeAlt />),
   getItem(getLink("Structure", "structure"), "structure", <HiMiniInboxStack />),
-  // getItem("About", "sub0", <FaInfo />, [
-  //   getItem(
-  //     getLink("Membership", "membership"),
-  //     "membership",
-  //     <HiMiniUserPlus />
-  //   ),
-  //   getItem(
-  //     getLink("Governance", "governance"),
-  //     "governance",
-  //     <HiBuildingLibrary />
-  //   ),
-  //   getItem(
-  //     getLink("Interactions", "interactions"),
-  //     "interactions",
-  //     <HiMiniCubeTransparent />
-  //   ),
-  //   getItem(getLink("Modules", "modules"), "modules", <HiMiniInboxStack />),
-  // ]),
-  // getItem(getLink("Open RFCs", "rfcs"), "rfcs", <MdDocumentScanner />),
+  getItem(getLink("Join Form", "join_form"), "join_form", <HiMiniInboxStack />),
 ];
-
-// const secondaryItems: MenuItem[] = [
-//   getItem("Element", "sub1", <SiElement />, [
-//     getItem(
-//       getLink(
-//         "Members",
-//         "https://matrix.to/#/#fellowship-members:parity.io",
-//         "_blank"
-//       ),
-//       "sub1-1",
-//       <SiElement />
-//     ),
-//     getItem(
-//       getLink(
-//         "Open",
-//         "https://matrix.to/#/#fellowship-open-channel:parity.io",
-//         "_blank"
-//       ),
-//       "sub1-2",
-//       <IoChatbubblesOutline />
-//     ),
-//   ]),
-// ]
-//
-// const linksItems: MenuItem[] = [
-//   getItem(
-//     getLink("RFCs Book", "https://polkadot-fellows.github.io/RFCs/", "_blank"),
-//     "rfcs book",
-//     <IoDocumentText />
-//   ),
-//   getItem(
-//     getLink(
-//       "Manifesto",
-//       "https://github.com/polkadot-fellows/manifesto/blob/0c3df46d76625980b8b48742cb86f4d8fa6dda8d/manifesto.pdf",
-//       "_blank"
-//     ),
-//     "manifesto",
-//     <IoDocumentText />
-//   ),
-// ]
 
 const type = "vertical";
 
 export const RouterInner = () => {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState<boolean>(false);
-  const [token, setToken] = useState({});
   const { mode, toggleTheme } = useTheme();
 
   const [openModal, setOpenModal] = useState(false);
@@ -177,24 +123,8 @@ export const RouterInner = () => {
     </>
   );
 
-  useEffect(() => {
-    setToken({
-      components: {
-        Menu: {
-          Layout: {
-            bodyBg: "blue",
-          },
-          colorPrimary: colors.primary,
-          colorBgContainer: "var(--background-primary)",
-          colorFillAlter: "#eee",
-          /* here is your component tokens */
-        },
-      },
-    });
-  }, [mode]);
-
   return (
-    <ConfigProvider theme={token}>
+    <ConfigProvider theme={mode === "light" ? lightTheme : darkTheme}>
       <Layout style={{ width: "100vw", height: "100vh" }}>
         <Sider
           style={{
@@ -237,28 +167,6 @@ export const RouterInner = () => {
             items={mainItems}
           />
           <Divider />
-          {/* <Menu
-            selectedKeys={[location?.pathname.replace("/", "")]}
-            theme={mode}
-            mode={type}
-            items={secondaryItems}
-          />
-          <Divider />
-          <Menu
-            theme={mode}
-            mode={type}
-            items={[
-              ...linksItems,
-              getItem(
-                <a href="#" onClick={() => setOpenModal(true)}>
-                  Resources
-                </a>,
-                "resources",
-                <GrResources />
-              ),
-            ]}
-          />
-           */}
           <section
             style={{
               position: "absolute",
