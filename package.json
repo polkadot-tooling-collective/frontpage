@@ -29,7 +29,6 @@
     "antd": "^5.16.4",
     "buffer": "^6.0.3",
     "dayjs": "^1.11.10",
-    "octokit": "^3.2.0",
     "polkadot-api": "^0.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
