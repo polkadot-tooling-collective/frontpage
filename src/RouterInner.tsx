@@ -184,9 +184,7 @@ export const RouterInner = () => {
   );
 
   return (
-    <ConfigProvider
-      theme={mode === "light" ? lightTheme : darkTheme}
-    >
+    <ConfigProvider theme={mode === "light" ? lightTheme : darkTheme}>
       <Layout style={{ width: "100vw", height: "100vh" }}>
         <Sider
           style={{

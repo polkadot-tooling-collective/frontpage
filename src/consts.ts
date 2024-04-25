@@ -1,3 +1,7 @@
+import { Octokit } from "octokit";
+
+export const octokit = new Octokit({ auth: import.meta.env.VITE_CREATE_PR });
+
 /*
  * Global Constants
  */
@@ -7,8 +11,8 @@ export const PolkadotUrl =
   "https://polkadot-tooling-collective.github.io/frontpage";
 
 export const GithubOwner = "polkadot-tooling-collective";
-export const GithubRepo = "";
-export const GithubApiUrl = `https://api.github.com/repos/${GithubOwner}/${GithubRepo}`;
+export const GithubRepo = "frontpage";
+export const GithubRepoUrl = `/repos/${GithubOwner}/${GithubRepo}`;
 
 export const SideMenuMaximisedWidth = 185;
 export const SideMenuMinimisedWidth = 75;
