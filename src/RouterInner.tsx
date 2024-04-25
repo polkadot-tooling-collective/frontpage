@@ -1,8 +1,9 @@
+/* eslint-disable prettier/prettier */
 import { ConfigProvider, Divider, Layout, Menu, Modal } from "antd";
 import type { GetProp, MenuProps } from "antd";
 import { HiGlobeAlt, HiMiniInboxStack } from "react-icons/hi2";
 
-import { PolkadotUrl, colors } from "consts";
+import { PolkadotUrl, colors, darkTheme, lightTheme } from "consts";
 import { useLocalStorage } from "usehooks-ts";
 
 import PolkadotIcon from "./img/polkadotIcon.svg?react";
@@ -18,6 +19,7 @@ import { Link, Route, Routes, useLocation } from "react-router-dom";
 
 import { ToolingCollective } from "pages/ToolingCollective";
 import { Structure } from "pages/Structure";
+import { FormRequest } from "pages/FormRequest";
 
 type MenuItem = GetProp<MenuProps, "items">[number];
 
@@ -33,6 +35,10 @@ const pages = [
   {
     path: "structure",
     element: <Structure />,
+  },
+  {
+    path: "join_form",
+    element: <FormRequest />,
   },
 ];
 
@@ -66,6 +72,7 @@ const getLink = (
 const mainItems: MenuItem[] = [
   getItem(getLink("Collective", "collective"), "collective", <HiGlobeAlt />),
   getItem(getLink("Structure", "structure"), "structure", <HiMiniInboxStack />),
+  getItem(getLink("Join Form", "join_form"), "join_form", <HiMiniInboxStack />),
   // getItem("About", "sub0", <FaInfo />, [
   //   getItem(
   //     getLink("Membership", "membership"),
@@ -132,7 +139,6 @@ const type = "vertical";
 export const RouterInner = () => {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState<boolean>(false);
-  const [token, setToken] = useState({});
   const { mode, toggleTheme } = useTheme();
 
   const [openModal, setOpenModal] = useState(false);
@@ -177,24 +183,10 @@ export const RouterInner = () => {
     </>
   );
 
-  useEffect(() => {
-    setToken({
-      components: {
-        Menu: {
-          Layout: {
-            bodyBg: "blue",
-          },
-          colorPrimary: colors.primary,
-          colorBgContainer: "var(--background-primary)",
-          colorFillAlter: "#eee",
-          /* here is your component tokens */
-        },
-      },
-    });
-  }, [mode]);
-
   return (
-    <ConfigProvider theme={token}>
+    <ConfigProvider
+      theme={mode === "light" ? lightTheme : darkTheme}
+    >
       <Layout style={{ width: "100vw", height: "100vh" }}>
         <Sider
           style={{

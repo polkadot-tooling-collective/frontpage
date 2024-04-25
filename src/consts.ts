@@ -31,5 +31,45 @@ export const DefaultLocale = "en";
 
 export const colors = {
   primary: "#FF8C00",
+  primaryHover: "#FFA93F",
   bgPrimary: "#fefefe",
+};
+
+export const lightTheme = {
+  components: {
+    Form: {
+      labelColor: "#000",
+      colorPrimary: colors.primary,
+      algorithm: true,
+    },
+    Menu: {
+      colorPrimary: colors.primary,
+      colorBgContainer: "var(--background-primary)",
+      colorFillAlter: "#eee",
+      /* here is your component tokens */
+    },
+    Button: {
+      colorPrimary: colors.primary,
+      colorPrimaryHover: colors.primaryHover,
+    },
+  },
+};
+
+export const darkTheme = {
+  components: {
+    Form: {
+      labelColor: "white",
+      colorPrimary: colors.primary,
+    },
+    Menu: {
+      colorPrimary: colors.primary,
+      colorBgContainer: "var(--background-primary)",
+      colorFillAlter: "#eee",
+      /* here is your component tokens */
+    },
+    Button: {
+      colorPrimary: colors.primary,
+      colorPrimaryHover: colors.primaryHover,
+    },
+  },
 };
