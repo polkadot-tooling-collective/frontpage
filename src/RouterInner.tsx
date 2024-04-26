@@ -74,7 +74,6 @@ const mainItems: MenuItem[] = [
   getItem(getLink("Join Form", "join_form"), "join_form", <RiFileList2Line />),
 ];
 
-
 const type = "vertical";
 
 export const RouterInner = () => {
