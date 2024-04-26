@@ -48,7 +48,7 @@ export const FormRequest = () => {
   const [format, setFormat] = useState({});
   const [isForm, setIsForm] = useState<boolean>(true);
 
-  const [add, setAdd] = useState<string>("");
+  const [addr, setAddr] = useState<string>("");
 
   const { mode } = useTheme();
 
@@ -115,11 +115,11 @@ export const FormRequest = () => {
             >
               <div style={{ display: "flex" }}>
                 <Polkicon
-                  address={add}
+                  address={addr}
                   style={{ marginRight: "10px" }}
                   outerColor={mode === "light" ? "#ccc" : "white"}
                 />
-                <Input onChange={(e) => setAdd(e.target.value)} />
+                <Input onChange={(e) => setAddr(e.target.value)} />
               </div>
             </Form.Item>
 
