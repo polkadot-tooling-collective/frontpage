@@ -5,6 +5,8 @@ import { IoMdClose } from "react-icons/io";
 import { colors } from "consts";
 import YAML from "yaml";
 import { useState } from "react";
+import { Polkicon } from "@polkadot-ui/react";
+import { useTheme } from "../../contexts/Themes";
 
 const { Option } = Select;
 
@@ -45,6 +47,10 @@ export const FormRequest = () => {
   const [form] = Form.useForm();
   const [format, setFormat] = useState({});
   const [isForm, setIsForm] = useState<boolean>(true);
+
+  const [add, setAdd] = useState<string>("");
+
+  const { mode } = useTheme();
 
   const formatAndPrepare = (values: FormType) => {
     const { name, address, github, about, motivation, evidence } = values;
@@ -107,7 +113,14 @@ export const FormRequest = () => {
                 },
               ]}
             >
-              <Input />
+              <div style={{ display: "flex" }}>
+                <Polkicon
+                  address={add}
+                  style={{ marginRight: "10px" }}
+                  outerColor={mode === "light" ? "#ccc" : "white"}
+                />
+                <Input onChange={(e) => setAdd(e.target.value)} />
+              </div>
             </Form.Item>
 
             <Form.Item
