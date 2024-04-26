@@ -1,7 +1,7 @@
 import { ConfigProvider, Divider, Layout, Menu, Modal } from "antd";
 import type { GetProp, MenuProps } from "antd";
 import { HiGlobeAlt, HiMiniInboxStack } from "react-icons/hi2";
-
+import { RiFileList2Line } from "react-icons/ri";
 import { PolkadotUrl, colors, darkTheme, lightTheme } from "consts";
 import { useLocalStorage } from "usehooks-ts";
 
@@ -71,7 +71,7 @@ const getLink = (
 const mainItems: MenuItem[] = [
   getItem(getLink("Collective", "collective"), "collective", <HiGlobeAlt />),
   getItem(getLink("Structure", "structure"), "structure", <HiMiniInboxStack />),
-  getItem(getLink("Join Form", "join_form"), "join_form", <HiMiniInboxStack />),
+  getItem(getLink("Join Form", "join_form"), "join_form", <RiFileList2Line />),
 ];
 
 const type = "vertical";
