@@ -35,6 +35,7 @@ type FormItem = {
 type FormType = {
   about: string;
   address: string;
+  matrix: string;
   github: string;
   evidence: [FormItem];
   name: string;
@@ -53,13 +54,15 @@ export const FormRequest = () => {
   const { mode } = useTheme();
 
   const formatAndPrepare = (values: FormType) => {
-    const { name, address, github, about, motivation, evidence } = values;
+    const { name, address, github, matrix, about, motivation, evidence } =
+      values;
     setFormat({
       collective: "Potoc",
       member: {
         name,
         address,
         github,
+        matrix,
         rank: 0,
       },
       date: new Date(),
@@ -131,6 +134,20 @@ export const FormRequest = () => {
                 {
                   required: true,
                   message: "Please add your github handle",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+
+            <Form.Item
+              name="matrix"
+              label="Element/Matrix Handle"
+              tooltip="Add your element/matrix handle name/username."
+              rules={[
+                {
+                  required: true,
+                  message: "Please add your element/matrix handle",
                 },
               ]}
             >
