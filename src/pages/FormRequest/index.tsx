@@ -54,7 +54,8 @@ export const FormRequest = () => {
   const { mode } = useTheme();
 
   const formatAndPrepare = (values: FormType) => {
-    const { name, address, github, matrix, about, motivation, evidence } = values;
+    const { name, address, github, matrix, about, motivation, evidence } =
+      values;
     setFormat({
       collective: "Potoc",
       member: {
