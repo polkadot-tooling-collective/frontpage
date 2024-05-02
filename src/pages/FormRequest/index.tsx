@@ -62,7 +62,7 @@ export const FormRequest = () => {
         name,
         address,
         github,
-        matrix,
+        matrix: `"${matrix}"`,
         rank: 0,
       },
       date: new Date(),
