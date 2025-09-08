@@ -20,7 +20,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mdx-js/react": "^3.0.1",
+    "@mdx-js/react": "^3.1.1",
     "@mdx-js/rollup": "^3.0.1",
     "@polkadot-api/descriptors": "^0.0.1",
     "@polkadot-ui/core": "0.0.1-alpha.2",
